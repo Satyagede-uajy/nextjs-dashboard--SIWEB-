@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from 'next/cache';
 import postgres from 'postgres';
 import {
   CustomerField,
@@ -14,8 +15,7 @@ const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require', prepare: false
 
 export async function fetchRevenue() {
   try {
-    //test
-
+    noStore();
     console.log('Fetching revenue data...');
     await new Promise((resolve) => setTimeout(resolve, 3000));
 

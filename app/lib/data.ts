@@ -10,7 +10,7 @@ import {
 import { formatCurrency } from './utils';
 
 
-const sql = postgres('postgres://postgres:EdM6f8K4WYGdIpg8@db.tnqtavdeskrdhmoukhxf.supabase.co:5432/postgres', { ssl: 'require' });
+const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 export async function fetchRevenue() {
   try {

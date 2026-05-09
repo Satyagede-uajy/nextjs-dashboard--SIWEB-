@@ -1,10 +1,11 @@
 import { generateYAxis } from '@/app/lib/utils';
 import { CalendarIcon } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
-import { fetchRevenue } from '@/app/lib/data'; 
+import { fetchRevenue } from '@/app/lib/data'; // <-- Pastikan ini ter-import
 
-export default async function RevenueChart() { 
-  
+// Fungsi harus ASYNC
+export default async function RevenueChart() {
+  // Komponen memanggil data sendiri di sini (yang akan memicu jeda 3 detik)
   const revenue = await fetchRevenue(); 
 
   const chartHeight = 350;
